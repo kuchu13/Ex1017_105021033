@@ -12,7 +12,6 @@ public class MainFrame extends JFrame {
         private JButton jbtns[] = new JButton[9];
         private LoginFrame loginFrame;
 
-
     public MainFrame (LoginFrame login) {
         loginFrame=login;
         initComp();
@@ -21,8 +20,7 @@ public class MainFrame extends JFrame {
     cp=this.getContentPane();
     cp.setLayout(new BorderLayout(5,5));
     this.setBounds(100,100,400,500);
-//        this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-
+//        this.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         this.addWindowListener(new WindowAdapter() {
             @Override
             public void windowClosing(WindowEvent e) {
@@ -31,7 +29,7 @@ public class MainFrame extends JFrame {
         });
     cp.add(jtf,BorderLayout.NORTH);
     cp.add(jpn,BorderLayout.CENTER);
-    jtf.setEditable(false);
+        jtf.setEditable(false);
     for(int i =0;i<9;i++){
         jbtns[i]=new JButton(Integer.toString(i));
         jpn.add (jbtns[i]);
